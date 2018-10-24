@@ -3,7 +3,12 @@
     <img width="450" height="250" alt="It's a Panda" src="../assets/images/panda.jpg">
     </div>
     <div style="text-align:center">
-        <select ngModel="countries">
-            <option *ngFor="let country of countries">{{country.name}}</option>
+        <select (change)="getStates($event.target.value)">
+            <option *ngFor="let country of countries" [value]=country.code>{{country.name}}</option>
             </select>
         </div>
+    <div style="text-align:center">   
+        <select>    
+            <option *ngFor="let state of states" [value]=state.id>{{state.name}}</option>
+        </select>
+    </div>
