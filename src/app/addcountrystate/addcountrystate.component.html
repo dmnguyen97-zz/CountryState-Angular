@@ -2,10 +2,15 @@
     Country Name: <input #countryName/>
     Country Code: <input #countryCode/>
     <div>
-        <button (click)="addCountry(countryName.value, countryCode.value)">Add</button>
+        <button (click)="addCountry(countryName.value, countryCode.value); countryName.value=''; countryCode.value=''">Add Country</button>
     </div>
 </div>
 
 <div style="text-align:center">
-    State: <input/>
+    Country Code: <input #countryCode/>
+    State Name: <input #stateName/>
+    State Code: <input #stateCode/>
+    <div>
+        <button (click)="addState(stateName.value, stateCode.value, countryCode.value); countryCode.value=''; stateName.value=''; stateCode.value=''">Add State</button>
+    </div>
 </div>

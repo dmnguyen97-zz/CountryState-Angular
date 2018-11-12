@@ -20,12 +20,18 @@ export class CountryService {
   }
 
   getState (code): Observable<State[]> {
-    const stateURL = this.countryURL+code+'/'+'states/';
+    const stateURL = this.countryURL + code + '/' + 'states/';
     return this.http.get<State[]>(stateURL);
   }
 
   addCountry (country: Country): Observable<Country> {
     return this.http.post<Country>(this.countryURL, country);
+  }
+
+  addState (state: State, code): Observable<State> {
+    const stateURL = this.countryURL + code + '/' + 'states/';
+    console.log(stateURL);
+    return this.http.post<State>(stateURL, state);
   }
 
 }
