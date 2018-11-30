@@ -1,14 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:center" class="image">
     <img width="450" height="250" alt="It's a Panda" src="../assets/images/panda.jpg">
     </div>
-    <div style="text-align:center">
+    <div style="text-align:center" class="dropdown">
         <select (change)="getStates($event.target.value)">
+            <option [value]="" disabled selected>Select a country</option>
             <option *ngFor="let country of countries" [value]=country.code>{{country.name}}</option>
             </select>
         </div>
-    <div style="text-align:center">   
-        <select>    
+    <div style="text-align:center" class="dropdown">   
+        <select>
+            <option [value]="" disabled selected>States</option>    
             <option *ngFor="let state of states" [value]=state.id>{{state.name}}</option>
         </select>
     </div>

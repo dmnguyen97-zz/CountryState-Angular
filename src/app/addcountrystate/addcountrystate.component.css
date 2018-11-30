@@ -1,0 +1,16 @@
+div {
+    padding: 10px;
+}
+
+.imgCenter {
+    text-align: center;
+}
+img {
+    text-align: center;
+}
+
+p {
+    color: #369;
+    font-size: 25px;
+    font-weight: bold;
+}

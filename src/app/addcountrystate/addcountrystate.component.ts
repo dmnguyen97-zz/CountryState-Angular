@@ -18,15 +18,14 @@ export class AddcountrystateComponent implements OnInit {
   }
 
   addCountry (name: string, code: string): void {
-    if (!name && !code ) { return; }
+    if (!name && !code) { return; }
     this.countryService.addCountry({ name, code } as Country)
-      .subscribe(country => {this.countries.push(country)});
+      .subscribe(country => {this.countries.push(country); });
   }
 
-  addState (name: string, code: string, countryCode: string): void {
-    this.countryService.addState({name, code } as State, countryCode)
-       .subscribe(state => {this.states.push(state)});
-    console.log(name, code, countryCode);
+  addState (statename: string, statecode: string, countryCodeForState: string): void {
+    this.countryService.addState({ name: statename, code: statecode, country_code: countryCodeForState } as State, countryCodeForState)
+       .subscribe(state => {this.states.push(state); });
   }
 
 }

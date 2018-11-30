@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Country } from './country';
 import { State } from './states';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
 
-  countryURL = 'https://xc-ajax-demo.herokuapp.com/api/countries/';
+  // countryURL = 'https://xc-ajax-demo.herokuapp.com/api/countries/';
+  countryURL = 'http://localhost:8000/backend/';
 
   constructor(
     private http: HttpClient
@@ -28,9 +33,8 @@ export class CountryService {
     return this.http.post<Country>(this.countryURL, country);
   }
 
-  addState (state: State, code): Observable<State> {
-    const stateURL = this.countryURL + code + '/' + 'states/';
-    console.log(stateURL);
+  addState (state: State, countryCodeForState): Observable<State> {
+    const stateURL = this.countryURL + countryCodeForState + '/' + 'states/';
     return this.http.post<State>(stateURL, state);
   }
 

@@ -1,16 +1,22 @@
 <div style="text-align:center">
+    <p>Add a Country!</p>
     Country Name: <input #countryName/>
     Country Code: <input #countryCode/>
     <div>
-        <button (click)="addCountry(countryName.value, countryCode.value); countryName.value=''; countryCode.value=''">Add Country</button>
+        <button (click)="addCountry(countryName.value, countryCode.value); countryName.value=''; countryCode.value='';">Add Country</button>        
     </div>
 </div>
 
+<div class="imgCenter">
+    <img width="450" height="250" alt="It's a Panda" src="../assets/images/doge.jpg">
+</div>
+
 <div style="text-align:center">
-    Country Code: <input #countryCode/>
+    <p>Add a State!</p>
+    Country Code: <input #countryCodeForState/>
     State Name: <input #stateName/>
     State Code: <input #stateCode/>
     <div>
-        <button (click)="addState(stateName.value, stateCode.value, countryCode.value); countryCode.value=''; stateName.value=''; stateCode.value=''">Add State</button>
+        <button (click)="addState(stateName.value, stateCode.value, countryCodeForState.value); countryCodeForState.value=''; stateName.value=''; stateCode.value=''">Add State</button>
     </div>
 </div>

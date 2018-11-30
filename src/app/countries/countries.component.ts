@@ -20,10 +20,12 @@ export class CountriesComponent implements OnInit {
   }
 
   getCountry() {
-    this.countryService.getCountry().subscribe(countries => {this.countries = countries});
+
+    this.countryService.getCountry().subscribe(countries => {this.countries = countries; });
   }
 
   getStates(code) {
-    this.countryService.getState(code).subscribe(states => {this.states = states});
+
+    this.countryService.getState(code).subscribe(states => {this.states = states; });
   }
 }
